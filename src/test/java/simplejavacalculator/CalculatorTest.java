@@ -10,7 +10,7 @@ public class CalculatorTest {
 	@Test
 	public void testSciConversion() {
 		Calculator calc = new Calculator();
-		Assertions.assertEquals("1.3 x 10 ^ 2", calc.sciConversion(130.0));
+		Assertions.assertEquals("1.300e+02", calc.sciConversion(130.0));
 	}
 
 	// Bi Tests
@@ -106,110 +106,124 @@ public class CalculatorTest {
 	@Test
 	public void testCalculateMonoCos() {
 		Calculator calc = new Calculator();
-		Assertions.assertEquals(0.5, calc.calculateMono(Calculator.MonoOperatorModes.cos, java.lang.Math.PI / 3), 0.0000000001);
+		Assertions.assertEquals(0.5, calc.calculateMono(Calculator.MonoOperatorModes.cos, 60.0));
 	}
 	
 	// 14
 	@Test
 	public void testCalculateMonoSin() {
 		Calculator calc = new Calculator();
-		Assertions.assertEquals(0.5, calc.calculateMono(Calculator.MonoOperatorModes.sin, java.lang.Math.PI / 6), 0.0000000001);
+		Assertions.assertEquals(0.5, calc.calculateMono(Calculator.MonoOperatorModes.sin, 30.0));
 	}
 	
 	// 15
 	@Test
-	public void testCalculateMonoTan() {
+	public void testCalculateMonoTan180() {
 		Calculator calc = new Calculator();
-		Assertions.assertEquals(1.0, calc.calculateMono(Calculator.MonoOperatorModes.tan, java.lang.Math.PI / 4), 0.0000000001);
+		Assertions.assertEquals(0.0, calc.calculateMono(Calculator.MonoOperatorModes.tan, 180.0));
 	}
 	
 	// 16
+	@Test
+	public void testCalculateMonoTanNaN() {
+		Calculator calc = new Calculator();
+		Assertions.assertEquals(NaN, calc.calculateMono(Calculator.MonoOperatorModes.tan, 90.0));
+	}
+	
+	// 17
+	@Test
+	public void testCalculateMonoTan() {
+		Calculator calc = new Calculator();
+		Assertions.assertEquals(1.73, calc.calculateMono(Calculator.MonoOperatorModes.tan, 60.0));
+	}
+	
+	// 18
 	@Test
 	public void testCalculateMonoLog() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 17
+	// 19
 	@Test
 	public void testCalculateMonoRate() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 18
+	// 20
 	@Test
 	public void testCalculateMonoAbs() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 19
+	// 21
 	@Test
 	public void testCalculateMonoArcCos() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 20
+	// 22
 	@Test
 	public void testCalculateMonoArcSin() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 21
+	// 23
 	@Test
 	public void testCalculateMonoArcTan() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 22
+	// 24
 	@Test
 	public void testCalculateMonoNatLog() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 23
+	// 25
 	@Test
 	public void testCalculateMonoEuler() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 24
+	// 26
 	@Test
 	public void testCalculateMonoNegation() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 25
+	// 27
 	@Test
 	public void testCalculateMonoPercent() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 26
+	// 28
 	@Test
 	public void testCalculateMonoDegrees() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 
-	// 27
+	// 29
 	@Test
 	public void testCalculateEqual() {
 		Calculator calc = new Calculator();
 		calc.calculateBi(Calculator.BiOperatorModes.add, 4.0);
-		calc.calculateBi(Calculator.BiOperatorModes.add, 5.6);
-		Assertions.assertEquals(11.9, calc.calculateEqual(2.3));
+		calc.calculateBi(Calculator.BiOperatorModes.add, 5.0);
+		Assertions.assertEquals(11.0, calc.calculateEqual(2.0));
 	}
 
-	// 28
+	// 30
 	@Test
 	public void testReset() {
 		Calculator calc = new Calculator();

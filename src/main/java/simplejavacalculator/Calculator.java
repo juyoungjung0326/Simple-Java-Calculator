@@ -112,10 +112,10 @@ public class Calculator {
             return 1 / num;
         }
         if (newMode == MonoOperatorModes.cos) {
-            return Math.cos(Math.toRadians(num));
+            return Math.round(Math.cos(Math.toRadians(num)) * 100.0) / 100.0;
         }
         if (newMode == MonoOperatorModes.sin) {
-            return Math.sin(Math.toRadians(num));
+        	return Math.round(Math.sin(Math.toRadians(num)) * 100.0) / 100.0;
         }
         if (newMode == MonoOperatorModes.tan) {
             if (num == 0 || num % 180 == 0) {
@@ -125,7 +125,7 @@ public class Calculator {
                 return NaN;
             }
 
-            return Math.tan(num);
+            return Math.round(Math.tan(Math.toRadians(num)) * 100.0) / 100.0;
         }
         if (newMode == MonoOperatorModes.log) {
             return log10(num);
@@ -181,5 +181,8 @@ public class Calculator {
         // never reach
         throw new Error();
     }
-
+    
+    public double roundNum(double num) {
+    	return Math.round(num * 100.0) / 100.0;
+    }
 }
