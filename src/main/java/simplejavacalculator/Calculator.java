@@ -69,11 +69,9 @@ public class Calculator {
         throw new Error();
     }
     
-    // convertor from eng to sci
+    // converter from eng to sci
     public String sciConversion(Double num)
     {
-    	
-    	
     	return String.format("%6.3e", num);
     }
 
@@ -146,7 +144,6 @@ public class Calculator {
         }
         if( newMode == MonoOperatorModes.asin)
         {
-        	
         	return Math.asin(Math.toRadians(num));
         }
         if( newMode == MonoOperatorModes.atan)
