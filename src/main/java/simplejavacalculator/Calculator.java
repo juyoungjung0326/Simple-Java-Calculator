@@ -175,9 +175,7 @@ public class Calculator {
         
         if(newMode == MonoOperatorModes.todeg)
         {
-        	System.out.println(num);
-        	System.out.println(Math.toRadians(num));
-        	return Math.toRadians(num);
+        	return Math.toDegrees(num);
         }
         
         // --------------------------END

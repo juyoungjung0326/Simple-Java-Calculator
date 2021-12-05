@@ -204,21 +204,21 @@ public class CalculatorTest {
 	@Test
 	public void testCalculateMonoNegation() {
 		Calculator calc = new Calculator();
-		//Assertions.assertEquals();
+		Assertions.assertEquals(-4.5, calc.calculateMono(Calculator.MonoOperatorModes.negation, 4.5));
 	}
 	
 	// 28
 	@Test
 	public void testCalculateMonoPercent() {
 		Calculator calc = new Calculator();
-		//Assertions.assertEquals();
+		Assertions.assertEquals(42.0, calc.calculateMono(Calculator.MonoOperatorModes.percent, 0.42));
 	}
 	
 	// 29
 	@Test
 	public void testCalculateMonoDegrees() {
 		Calculator calc = new Calculator();
-		//Assertions.assertEquals();
+		Assertions.assertEquals(90.0, calc.calculateMono(Calculator.MonoOperatorModes.todeg, Math.PI / 2));
 	}
 
 	// 30
