@@ -185,6 +185,11 @@ public class Calculator {
         
         if(newMode == MonoOperatorModes.factorial)
         {
+        	if(num == 0 )
+        		return 1.0;
+        	if(num == 1 || num == 2)
+        		return num;
+        	
         	int i, fact = 1;
         	
         	int value = num.intValue();
