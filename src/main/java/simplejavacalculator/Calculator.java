@@ -143,15 +143,15 @@ public class Calculator {
      // --------------------------NEW
         if( newMode == MonoOperatorModes.acos)
         {
-        	return Math.acos(Math.toRadians(num));
+        	return Math.round(Math.toDegrees(Math.acos(num)) * 100.0) / 100.0;
         }
         if( newMode == MonoOperatorModes.asin)
         {
-        	return Math.asin(Math.toRadians(num));
+        	return Math.round(Math.toDegrees(Math.asin(num)) * 100.0) / 100.0;
         }
         if( newMode == MonoOperatorModes.atan)
         {
-        	return Math.atan(Math.toRadians(num));
+        	return Math.round(Math.toDegrees(Math.atan(num)) * 100.0) / 100.0;
         }
         if( newMode == MonoOperatorModes.natlog)
         {
