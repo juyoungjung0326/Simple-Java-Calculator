@@ -9,6 +9,8 @@
  * @license     Apache (http://www.apache.org/licenses/LICENSE-2.0)
  */
 
+// Adapted for use from https://github.com/pH-7/Simple-Java-Calculator
+
 package simplejavacalculator;
 
 import static java.lang.Double.NaN;
