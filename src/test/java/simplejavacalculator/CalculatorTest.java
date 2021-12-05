@@ -195,7 +195,8 @@ public class CalculatorTest {
 	}
 	
 	// 26
-	public void testCalculateMonoNatNaN() {
+	@Test
+	public void testCalculateMonoNatLogNaN() {
 		Calculator calc = new Calculator();
 		Assertions.assertEquals(NaN, calc.calculateMono(Calculator.MonoOperatorModes.natlog, 0.0));
 	}

@@ -156,6 +156,9 @@ public class Calculator {
         }
         if( newMode == MonoOperatorModes.natlog)
         {
+        	if(num==0)
+        		return NaN;
+        	
         	return Math.log(num);
         }
         
