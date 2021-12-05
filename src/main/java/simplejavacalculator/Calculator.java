@@ -21,7 +21,7 @@ import java.lang.Math;
 public class Calculator {
 
     public enum BiOperatorModes {
-        normal, add, minus, multiply, divide , xpowerofy, modulus,nthroot 
+        normal, add, minus, multiply, divide , xpowerofy, modulus,nthroot, npr,ncr 
     }
 
     public enum MonoOperatorModes {
@@ -64,6 +64,72 @@ public class Calculator {
         if(mode == BiOperatorModes.nthroot)
         {
         	return Math.pow(num1, 1.0/num2);
+        }
+        
+        if(mode == BiOperatorModes.npr)
+        {
+        	int n = num1.intValue();
+        	int r = num2.intValue();
+        	int i, fact = 1, fact2 = 1;
+        	
+        	if(r > n)
+        	{
+        		return NaN;
+        	}
+        	
+        	for(i = 1; i <= n; i++)
+        	{
+        		fact = fact * i;
+        	}
+        	
+        	for(i = 1; i <= (n - r); i++)
+        	{
+        		fact2 = fact2 * i;
+        	}
+        	
+        	Double dTop = Double.valueOf(fact);
+        	Double dBot = Double.valueOf(fact2);
+        	Double val = dTop / dBot;
+        	
+        	return val;
+        	
+        	
+        }
+        
+        if(mode == BiOperatorModes.ncr)
+        {
+        	int n = num1.intValue();
+        	int r = num2.intValue();
+        	int i, fact = 1, fact2 = 1, fact3 = 1;
+        	
+        	if(r > n)
+        	{
+        		return NaN;
+        	}
+        	
+        	for(i = 1; i <= n; i++)
+        	{
+        		fact = fact * i;
+        	}
+        	
+        	for(i = 1; i <= (n - r); i++)
+        	{
+        		fact2 = fact2 * i;
+        	}
+        	
+        	for(i = 1; i <= r; i++)
+        	{
+        		fact3 = fact3 * i;
+        	}
+        	
+        	Double dTop = Double.valueOf(fact);
+        	Double dBot = Double.valueOf(fact2);
+        	Double dr = Double.valueOf(fact3);
+        	Double val = dTop / (dBot * dr);
+        	
+        	return val;
+        	
+        	
         }
         // -------------------------- END
 

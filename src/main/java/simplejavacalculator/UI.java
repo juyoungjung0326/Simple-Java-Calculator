@@ -55,7 +55,7 @@ public class UI implements ActionListener {
       butEqual, butCancel, butSquareRoot, butSquare, butOneDividedBy,
       butCos, butSin, butTan, butxpowerofy, butlog, butrate, butabs, butBinary, butModulus,
       butAcos,butAsin,butAtan, butNatlog, butEuler, butNthroot, butPercent, butSci, 
-      butNegate, butRads, butFactorial;
+      butNegate, butRads, butFactorial, butNpr, butNcr;
    private final Calculator calc;
    
    private final String[] buttonValue = {"0", "1", "2", "3", "4", "5", "6",
@@ -126,6 +126,8 @@ public class UI implements ActionListener {
       butPercent = new JButton("0.x->x%");
       butRads = new JButton("Rads");
       butFactorial = new JButton("!x");
+      butNpr = new JButton("nPr");
+      butNcr = new JButton("nCr");
       
       
       
@@ -176,6 +178,8 @@ public class UI implements ActionListener {
       butPercent.setFont(font);
       butRads.setFont(font);
       butFactorial.setFont(font);
+      butNpr.setFont(font);
+      butNcr.setFont(font);
      
       
       panel.add(Box.createHorizontalStrut(100));
@@ -245,6 +249,8 @@ public class UI implements ActionListener {
       
       panelSub11.add(butRads);
       panelSub11.add(butFactorial);
+      panelSub11.add(butNpr);
+      panelSub11.add(butNcr);
       panel.add(panelSub11);
       
      
@@ -282,6 +288,8 @@ public class UI implements ActionListener {
       butPercent.addActionListener(this);
       butRads.addActionListener(this);
       butFactorial.addActionListener(this);
+      butNcr.addActionListener(this);
+      butNpr.addActionListener(this);
      
      
       frame.add(panel);
@@ -337,6 +345,15 @@ public class UI implements ActionListener {
              text.replaceSelection(butNthroot.getText());
           }
          
+         if (source == butNpr) {
+             writer(calc.calculateBi(Calculator.BiOperatorModes.npr, reader()));
+             text.replaceSelection(butNpr.getText());
+          }
+         
+         if (source == butNcr) {
+             writer(calc.calculateBi(Calculator.BiOperatorModes.ncr, reader()));
+             text.replaceSelection(butNcr.getText());
+          }
          //--------------------------------------END
          if (source == butxpowerofy) {
             writer(calc.calculateBi(Calculator.BiOperatorModes.xpowerofy, reader()));
