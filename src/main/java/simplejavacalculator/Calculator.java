@@ -14,7 +14,6 @@
 package simplejavacalculator;
 
 import static java.lang.Double.NaN;
-import static java.lang.Math.log;
 import static java.lang.Math.log10;
 import static java.lang.Math.pow;
 import java.lang.Math;

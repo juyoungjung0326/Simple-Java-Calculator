@@ -30,7 +30,6 @@ import java.awt.Font;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 
-import java.awt.Image;
 import javax.swing.ImageIcon; 
 import java.io.*;
 
