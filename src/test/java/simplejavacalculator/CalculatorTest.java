@@ -262,14 +262,14 @@ public class CalculatorTest {
 	public void testCalculateBiError() {
 		Calculator calc = new Calculator();
 		calc.calculateBi(null, null);
-		calc.calculateBi(null, null);
+		Assertions.assertEquals(NaN, calc.calculateBi(null, null));
 	}
 		
 	// 35
 	@Test
 	public void testCalculateMonoError() {
 		Calculator calc = new Calculator();
-		calc.calculateMono(null, null);
+		Assertions.assertEquals(NaN, calc.calculateMono(null, null));
 	}	
 
 }

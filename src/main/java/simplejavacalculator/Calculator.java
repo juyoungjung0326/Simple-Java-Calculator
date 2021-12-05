@@ -67,8 +67,8 @@ public class Calculator {
         }
         // -------------------------- END
 
-        // never reach
-        throw new Error();
+        // never reach (error)
+        return NaN;
     }
     
     // converter from eng to sci
@@ -201,8 +201,8 @@ public class Calculator {
         	
         }
         // --------------------------END
-        // never reach
-        throw new Error();
+        // never reach (error)
+        return NaN;
     }
     
 }
