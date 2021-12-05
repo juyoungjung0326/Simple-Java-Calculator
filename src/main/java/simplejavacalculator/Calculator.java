@@ -128,6 +128,9 @@ public class Calculator {
             return Math.round(Math.tan(Math.toRadians(num)) * 100.0) / 100.0;
         }
         if (newMode == MonoOperatorModes.log) {
+        	if(num == 0)
+        		return NaN;
+        		
             return log10(num);
         }
         if (newMode == MonoOperatorModes.rate) {
@@ -182,7 +185,4 @@ public class Calculator {
         throw new Error();
     }
     
-    public double roundNum(double num) {
-    	return Math.round(num * 100.0) / 100.0;
-    }
 }

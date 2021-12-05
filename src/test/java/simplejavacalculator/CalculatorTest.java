@@ -141,80 +141,87 @@ public class CalculatorTest {
 	@Test
 	public void testCalculateMonoLog() {
 		Calculator calc = new Calculator();
-		//Assertions.assertEquals();
+		Assertions.assertEquals(0.0, calc.calculateMono(Calculator.MonoOperatorModes.log, 1.0));
 	}
 	
 	// 19
 	@Test
-	public void testCalculateMonoRate() {
+	public void testCalculateMonoLogNaN() {
 		Calculator calc = new Calculator();
-		//Assertions.assertEquals();
+		Assertions.assertEquals(NaN, calc.calculateMono(Calculator.MonoOperatorModes.log, 0.0));
 	}
 	
 	// 20
 	@Test
-	public void testCalculateMonoAbs() {
+	public void testCalculateMonoRate() {
 		Calculator calc = new Calculator();
-		//Assertions.assertEquals();
+		Assertions.assertEquals(0.57, calc.calculateMono(Calculator.MonoOperatorModes.rate, 57.0));
 	}
 	
 	// 21
+	@Test
+	public void testCalculateMonoAbs() {
+		Calculator calc = new Calculator();
+		Assertions.assertEquals(2.0, calc.calculateMono(Calculator.MonoOperatorModes.abs, -2.0));
+	}
+	
+	// 22
 	@Test
 	public void testCalculateMonoArcCos() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 22
+	// 23
 	@Test
 	public void testCalculateMonoArcSin() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 23
+	// 24
 	@Test
 	public void testCalculateMonoArcTan() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 24
+	// 25
 	@Test
 	public void testCalculateMonoNatLog() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 25
+	// 26
 	@Test
 	public void testCalculateMonoEuler() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 26
+	// 27
 	@Test
 	public void testCalculateMonoNegation() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 27
+	// 28
 	@Test
 	public void testCalculateMonoPercent() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 	
-	// 28
+	// 29
 	@Test
 	public void testCalculateMonoDegrees() {
 		Calculator calc = new Calculator();
 		//Assertions.assertEquals();
 	}
 
-	// 29
+	// 30
 	@Test
 	public void testCalculateEqual() {
 		Calculator calc = new Calculator();
@@ -223,7 +230,7 @@ public class CalculatorTest {
 		Assertions.assertEquals(11.0, calc.calculateEqual(2.0));
 	}
 
-	// 30
+	// 31
 	@Test
 	public void testReset() {
 		Calculator calc = new Calculator();
