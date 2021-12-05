@@ -26,7 +26,8 @@ public class Calculator {
 
     public enum MonoOperatorModes {
         square, squareRoot, oneDividedBy, cos, sin, tan ,log , rate,
-        abs, acos, asin, atan, natlog, euler, sci, negation, percent, todeg
+        abs, acos, asin, atan, natlog, euler, sci, negation, percent, todeg,
+        factorial
     }
 
     private Double num1, num2;
@@ -182,6 +183,23 @@ public class Calculator {
         	return Math.toDegrees(num);
         }
         
+        if(newMode == MonoOperatorModes.factorial)
+        {
+        	int i, fact = 1;
+        	
+        	int value = num.intValue();
+        	
+        	for(i = 1; i <= value; i++)
+        	{
+        		fact = fact * i;
+        	}
+        	
+        	
+        	Double d = Double.valueOf(fact);
+        	
+        	return d;
+        	
+        }
         // --------------------------END
         // never reach
         throw new Error();

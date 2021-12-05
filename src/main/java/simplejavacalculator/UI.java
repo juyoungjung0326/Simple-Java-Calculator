@@ -55,7 +55,7 @@ public class UI implements ActionListener {
       butEqual, butCancel, butSquareRoot, butSquare, butOneDividedBy,
       butCos, butSin, butTan, butxpowerofy, butlog, butrate, butabs, butBinary, butModulus,
       butAcos,butAsin,butAtan, butNatlog, butEuler, butNthroot, butPercent, butSci, 
-      butNegate, butRads;
+      butNegate, butRads, butFactorial;
    private final Calculator calc;
    
    private final String[] buttonValue = {"0", "1", "2", "3", "4", "5", "6",
@@ -125,6 +125,7 @@ public class UI implements ActionListener {
       butNegate = new JButton("-(x)");
       butPercent = new JButton("0.x->x%");
       butRads = new JButton("Rads");
+      butFactorial = new JButton("!x");
       
       
       
@@ -174,6 +175,7 @@ public class UI implements ActionListener {
       butNegate.setFont(font);
       butPercent.setFont(font);
       butRads.setFont(font);
+      butFactorial.setFont(font);
      
       
       panel.add(Box.createHorizontalStrut(100));
@@ -242,6 +244,7 @@ public class UI implements ActionListener {
       panel.add(panelSub10);
       
       panelSub11.add(butRads);
+      panelSub11.add(butFactorial);
       panel.add(panelSub11);
       
      
@@ -278,6 +281,7 @@ public class UI implements ActionListener {
       butNegate.addActionListener(this);
       butPercent.addActionListener(this);
       butRads.addActionListener(this);
+      butFactorial.addActionListener(this);
      
      
       frame.add(panel);
@@ -411,6 +415,12 @@ public class UI implements ActionListener {
          if(source == butRads)
          {
         	 writer(calc.calculateMono(Calculator.MonoOperatorModes.todeg, reader()));
+             
+         }
+         
+         if(source == butFactorial)
+         {
+        	 writer(calc.calculateMono(Calculator.MonoOperatorModes.factorial, reader()));
              
          }
          
