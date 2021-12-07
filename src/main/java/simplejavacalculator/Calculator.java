@@ -34,9 +34,6 @@ public class Calculator {
     private BiOperatorModes mode = BiOperatorModes.normal;
 
     private Double calculateBiImpl() {
-        if (mode == BiOperatorModes.normal) {
-            return num2;
-        }
         if (mode == BiOperatorModes.add) {
             if (num2 != 0) {
                 return num1 + num2;
